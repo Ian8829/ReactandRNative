@@ -3,7 +3,8 @@ import { render } from 'react-dom';
 
 import MyComponent from './components/MyComponent';
 
-render(
-    <MyComponent/>,
+const myComponent = render(
+  <MyComponent/>,
     document.querySelector('.container')
 );
+
