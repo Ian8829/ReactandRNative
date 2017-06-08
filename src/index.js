@@ -8,3 +8,9 @@ const myComponent = render(
     document.querySelector('.container')
 );
 
+setTimeout(() => {
+    myComponent.setState({
+        heading: 'React Awesome??',
+        content: 'Yes?'
+    });
+}, 3000);
