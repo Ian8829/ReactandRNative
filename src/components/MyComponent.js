@@ -1,32 +1,23 @@
 import React, { Component } from 'react';
 
-class First extends Component {
+export default class MyComponent extends Component {
+    state = {
+        first: false,
+        second: true
+    }
+
     render() {
-        return(
-            <p>First...</p>
+        const { first, second } = this.state;
+
+        return (
+            <main>
+                <section>
+                    <button disabled={first}>First</button>
+                </section>
+                <section>
+                    <button disabled={second}>Second</button>
+                </section>
+            </main>
         );
     }
 }
-
-class Second extends Component {
-    render() {
-        return(
-            <p>Second...</p>
-        );
-    }
-}
-
-class MyComponent extends Component {
-    render() {
-        return(
-            <section>
-                {this.props.children}
-            </section>
-        );
-    }
-}
-
-MyComponent.First = First;
-MyComponent.Second = Second;
-
-export default MyComponent;
