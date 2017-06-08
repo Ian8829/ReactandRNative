@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-
-import MyComponent from './components/MyComponent';
+import MyComponent from "./components/MyComponent";
 
 const myComponent = render(
-  <MyComponent/>,
+    <MyComponent/>,
     document.querySelector('.container')
 );
 
 setTimeout(() => {
     myComponent.setState({
-        heading: 'React Awesome??',
-        content: 'Yes?'
-    });
+        first: 'done!'
+    })
+}, 1000);
+
+setTimeout(() => {
+    myComponent.setState({
+        second: 'done!'
+    })
+}, 2000);
+
+setTimeout(() => {
+    myComponent.setState({
+        third: 'done!'
+    })
 }, 3000);

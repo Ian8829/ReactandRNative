@@ -2,18 +2,22 @@ import React, { Component } from 'react';
 
 export default class MyComponent extends Component {
     state = {
-        heading: 'React Awesome..',
-        content: 'Loading...'
-    }
+        first: 'loading...',
+        second: 'loading...',
+        third: 'loading...'
+    };
 
     render() {
-        const { heading, content } = this.state;
+        const { state } = this;
 
-        return (
-            <main>
-                <h1>{heading}</h1>
-                <p>{content}</p>
-            </main>
+        return(
+            <ul>
+                {Object.keys(state).map(i => (
+                    <li key={i}>
+                        <strong>{i}: </strong>{state[i]}
+                    </li>
+                ))}
+            </ul>
         );
     }
 }
