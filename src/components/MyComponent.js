@@ -2,15 +2,15 @@ import React, { Component } from 'react';
 
 export default class MyComponent extends Component {
     state = {
-        first: 'loading...',
-        second: 'loading...',
-        third: 'loading...'
+      first: 'loading...',
+      second: 'loading...',
+      third: 'loading...',
     };
 
     render() {
         const { state } = this;
 
-        return(
+        return (
             <ul>
                 {Object.keys(state).map(i => (
                     <li key={i}>

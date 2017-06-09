@@ -1,26 +1,8 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import MyComponent from "./components/MyComponent";
+import MyButton from "./components/MyButton";
 
-const myComponent = render(
-    <MyComponent/>,
+render(
+    <MyButton/>,
     document.querySelector('.container')
 );
-
-setTimeout(() => {
-    myComponent.setState({
-        first: 'done!'
-    })
-}, 1000);
-
-setTimeout(() => {
-    myComponent.setState({
-        second: 'done!'
-    })
-}, 2000);
-
-setTimeout(() => {
-    myComponent.setState({
-        third: 'done!'
-    })
-}, 3000);
