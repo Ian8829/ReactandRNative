@@ -1,1 +1,1 @@
-#This is exercise for React and Reducx Book(Packt)
+#This is exercise for React and ReactNative Book(Packt)
