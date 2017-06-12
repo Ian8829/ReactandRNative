@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import MyContainer from "./components/MyContainer";
+import MyButton from "./components/MyButton";
 
 render(
-  <MyContainer/>,
+  <MyButton/>,
   document.querySelector('.container')
 );
