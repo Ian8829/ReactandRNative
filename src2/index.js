@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import MyInput from "./components/MyInput";
+import MyList from "./components/MyList";
 
 render(
-  <MyInput/>,
+  <MyList/>,
   document.querySelector('.container')
 );
