@@ -37,6 +37,72 @@ export default class MyFeature extends Component {
     })
   };
 
+  // update the state of comp with new title value
+  // by using 'set' to create a new map
+  onChangeTitle = e => {
+    this.data = this.data.set(
+      'title',
+      e.target.value
+    );
+  }
+
+  onChangeSummary = e => {
+    this.data = this.data.set(
+      'summary',
+      e.target.value
+    );
+  }
+
+  onClickAdd = () => {
+    this.data = this.data.update(
+      'articles',
+      a => a.push(fromJS({
+        id: cuid(),
+        title: this.data.get('title'),
+        summary: this.data.get('summary'),
+        display: 'none'
+      }))
+    )
+      .set('title', '')
+      .set('summary', '');
+  }
+
+  onClickRemove = id => {
+    const index = this.data
+      .get('articles')
+      .findIndex(
+        a => a.get('id') === id
+      );
+
+    this.data = this.data
+      .update(
+        'articles',
+        a => a.delete(index)
+      );
+  }
+
+  onClickToggle = id => {
+    const index = this.data
+      .get('articles')
+      .findIndex(
+        a => a.get('id') === id
+      );
+
+    this.data = this.data
+      .update(
+        'articles',
+        articles => articles.update(
+          index,
+          a => a.set(
+            'display',
+            a.get('display') ? '' : 'none'
+          )
+        )
+      )
+  }
+
+
+
   // Getter for 'Immutable.js" state data..
   get data() {
     return this.state.data;

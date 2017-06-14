@@ -1,6 +1,6 @@
 module.exports = {
   entry: [
-    './cp5/index.js'
+    './src5/index.js'
   ],
   output: {
     path: __dirname,
