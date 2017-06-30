@@ -5,4 +5,4 @@ import MyFeature from './components/MyFeature';
 render(
   <MyFeature/>,
   document.querySelector('.container')
-)
+);
