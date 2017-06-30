@@ -1,34 +1,9 @@
 import React from 'react';
-import { Map as ImmutableMap } from 'immutable';
+import { render } from 'react-dom';
 
-const ErrorMessage = ({ error }) =>
-  ImmutableMap()
-    .set(null, null)
-    .get(
-      error,
-      (<strong>{error}</strong>)
-    );
+import UserListContainer from './components/userListContainer';
 
-const LoadingMessage = ({ loading }) =>
-  ImmutableMap()
-    .set(null, null)
-    .get(
-      loading,
-      (<em>{loading}</em>)
-    );
-
-export default ({
-  error,
-  loading,
-  users
-}) => (
-  <section>
-    <ErrorMessage error={error}/>
-    <LoadingMessage loading={loading}/>
-    <ul>
-      {users.map(i => (
-        <li key={i.id}>{i.name}</li>
-      ))}
-    </ul>
-  </section>
+render(
+  <UserListContainer/>,
+  document.querySelector('.container');
 );
