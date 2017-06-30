@@ -5,5 +5,5 @@ import UserListContainer from './components/userListContainer';
 
 render(
   <UserListContainer/>,
-  document.querySelector('.container')
+  document.querySelector('#container')
 );
